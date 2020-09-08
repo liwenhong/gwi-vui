@@ -1,12 +1,27 @@
 {
   "name": "gwi-vui",
   "version": "0.1.0",
-  "private": true,
+  "description": "A Component Library for Vue.js.",
+  "private": false,
+  "main": "lib/gwivui.umd.js",
+  "unpkg": "lib/gwivui.umd.min.js",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "lint": "vue-cli-service lint",
+    "lib": "vue-cli-service build --target lib --name gwivui --dest lib packages/index.js"
   },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:liwenhong/gwi-vui"
+  },
+  "homepage": "",
+  "keywords": [
+    "gwi",
+    "vue",
+    "components"
+  ],
+  "license": "MIT",
   "dependencies": {
     "core-js": "^3.6.5",
     "vue": "^2.6.11"
