@@ -1,15 +1,18 @@
 {
   "name": "gwi-vui",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "A Component Library for Vue.js.",
   "private": false,
-  "main": "lib/gwivui.umd.js",
-  "unpkg": "lib/gwivui.umd.min.js",
+  "main": "lib/index.js",
+  "unpkg": "lib/index.umd.min.js",
+  "style": "lib/theme/index.css",
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
     "lint": "vue-cli-service lint",
-    "lib": "vue-cli-service build --target lib --name gwivui --dest lib packages/index.js"
+    "lib:pub": "cross-env rimraf ./lib && node ./build/cli.build.js",
+    "docs:dev": "vuepress dev docs",
+    "docs:build": "vuepress build docs"
   },
   "repository": {
     "type": "git",
@@ -24,6 +27,8 @@
   "license": "MIT",
   "dependencies": {
     "core-js": "^3.6.5",
+    "node-sass": "^4.14.1",
+    "sass-loader": "^10.0.2",
     "vue": "^2.6.11"
   },
   "devDependencies": {
@@ -31,9 +36,12 @@
     "@vue/cli-plugin-eslint": "~4.5.0",
     "@vue/cli-service": "~4.5.0",
     "babel-eslint": "^10.1.0",
+    "cross-env": "^7.0.2",
     "eslint": "^6.7.2",
     "eslint-plugin-vue": "^6.2.2",
-    "vue-template-compiler": "^2.6.11"
+    "runjs": "^4.4.2",
+    "vue-template-compiler": "^2.6.11",
+    "vuepress": "^1.5.4"
   },
   "eslintConfig": {
     "root": true,

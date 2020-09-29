@@ -1,13 +1,15 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <gwi-button>这是个按钮</gwi-button>
+    <keep-alive>
+      <router-view v-if="$route.meta.keepAlive" />
+    </keep-alive>
+    <router-view v-if="!$route.meta.keepAlive" />
   </div>
 </template>
 
 <script>
 
-
+// import '../lib/theme/button.css'
 export default {
   name: 'App',
   components: {
